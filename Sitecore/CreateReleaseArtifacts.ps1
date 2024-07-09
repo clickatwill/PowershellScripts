@@ -8,10 +8,10 @@ $msBuildExe = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSB
 
 Remove-Item $projectOutput -Recurse
 
-Write-Host "Building started AQR.Helix.sln" -foregroundcolor green
-& "$($msBuildExe)" AQR.Helix.sln /t:clean,build /p:OutputPath=$projectOutput /v:m /p:Configuration=Release /p:BuildNumber=1 
+Write-Host "Building started YourSolution.sln" -foregroundcolor green
+& "$($msBuildExe)" YourSolution.sln /t:clean,build /p:OutputPath=$projectOutput /v:m /p:Configuration=Release /p:BuildNumber=1 
 
-Write-Host "Building AQR.Helix.sln - Completed!" -foregroundcolor green
+Write-Host "YourSolution.sln - Completed!" -foregroundcolor green
 
 # binary
 $binItems = Get-ChildItem $projectOutput -Recurse -Exclude Sitecore*.dll,system*.dll,Glass*.dll,Antlr3.Runtime.dll,Castle.Core.dll,WebGrease.dll,Newtonsoft.Json.dll | Where-Object {$_.Name -like "*.dll" }
